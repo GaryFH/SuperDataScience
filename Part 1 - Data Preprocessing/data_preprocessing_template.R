@@ -1,7 +1,15 @@
+setwd("C:/Users/gary/Dropbox/Rstudio/R data files/SuperDataScience/Part 1 - Data Preprocessing/")
+
 # Data Preprocessing Template
 
 # Importing the dataset
 dataset = read.csv('Data.csv')
+
+
+#replace missing values with mean
+dataset$Age=ifelse(is.na(dataset$Age),mean(na.omit(dataset$Age)),dataset$Age)
+dataset$Salary=ifelse(is.na(dataset$Salary),mean(na.omit(dataset$Salary)),dataset$Salary)
+
 
 # Splitting the dataset into the Training set and Test set
 # install.packages('caTools')
